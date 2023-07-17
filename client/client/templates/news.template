@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Последние новости</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+<h2>
+<a href="http://{{ frontend_ip }}:{{ frontend_port }}">На главную</a>
+</h2>
+    {% for key in sources.keys() %}
+        <h3>{{ key }}</h3>
+        <p style="margin-left:20px">
+            {% for news in sources[key] %}
+            {{ news }}
+            <br>
+            {% endfor %}
+        </p>
+    {% endfor %}
+</body>
+</html>
